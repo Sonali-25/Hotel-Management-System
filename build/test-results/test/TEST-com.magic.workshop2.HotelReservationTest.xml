@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.magic.workshop2.HotelReservationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-06-09T16:46:52" hostname="DESKTOP-0RG9E2N" time="0.215">
+<testsuite name="com.magic.workshop2.HotelReservationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-09T17:13:13" hostname="DESKTOP-0RG9E2N" time="0.051">
   <properties/>
-  <testcase name="checkCheapestHotelForWeekend()" classname="com.magic.workshop2.HotelReservationTest" time="0.048"/>
-  <testcase name="checkCustomerType()" classname="com.magic.workshop2.HotelReservationTest" time="0.003"/>
-  <testcase name="checkNameForHotel()" classname="com.magic.workshop2.HotelReservationTest" time="0.002"/>
-  <testcase name="checkWeekendRate()" classname="com.magic.workshop2.HotelReservationTest" time="0.002"/>
-  <testcase name="cheapestHotelForWeekdaysAndWeekend()" classname="com.magic.workshop2.HotelReservationTest" time="0.123"/>
-  <testcase name="checkCheapestHotelRate()" classname="com.magic.workshop2.HotelReservationTest" time="0.009"/>
-  <testcase name="checkWeekRate()" classname="com.magic.workshop2.HotelReservationTest" time="0.006"/>
-  <system-out><![CDATA[LakeWood200
-LakeWood310
-]]></system-out>
+  <testcase name="hotelRating()" classname="com.magic.workshop2.HotelReservationTest" time="0.051"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

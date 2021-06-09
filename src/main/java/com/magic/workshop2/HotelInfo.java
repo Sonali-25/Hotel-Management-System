@@ -11,12 +11,14 @@ public class HotelInfo {
     private Integer weekdayRate;
     private Integer weekendRate;
     public Integer totalCost;
+    private Integer rating;
 
-    public HotelInfo(String hotelName, String typeOfCustomer, Integer weekdayRate , Integer weekendRate) {
+    public HotelInfo(String hotelName, String typeOfCustomer, Integer weekdayRate , Integer weekendRate,Integer rating) {
         this.hotelName = hotelName;
         this.typeOfCustomer = typeOfCustomer;
         this.weekdayRate = weekdayRate;
         this.weekendRate = weekendRate;
+        this.rating = rating;
     }
 
     public String getHotelName() {
@@ -42,8 +44,13 @@ public class HotelInfo {
         this.totalCost = totalCost;
     }
 
+    public Integer getRating() {
+        return rating;
+    }
+
     public Integer getTotalRate(LocalDate dateStart , LocalDate dateEnd , long difference) {
         Optional<Integer> totalcost = Stream.iterate(dateStart , date -> date.plusDays(difference)).limit(dateEnd.getDayOfMonth() - dateStart.getDayOfMonth() + 1 ).map(date -> { if(date.getDayOfWeek().equals(DayOfWeek.SATURDAY) || date.getDayOfWeek().equals(DayOfWeek.SUNDAY)) return this.getWeekendRate();return this.getWeekdayRate();}).reduce((total , next) -> total+next);
         return totalcost.get();
     }
+
 }

@@ -8,8 +8,8 @@ import java.time.LocalDate;
 
 public class HotelReservation {
 
-    HotelInfo addHotel(String name , String type , int weekday , int weekend) {
-        return new HotelInfo(name , type , weekday ,weekend);
+    HotelInfo addHotel(String name , String type , int weekday , int weekend,int rating) {
+        return new HotelInfo(name , type , weekday ,weekend,rating);
     }
     public Result findCheapestHotel(ArrayList<HotelInfo> hotelArray , String dateS , String dateE) {
 
@@ -40,7 +40,7 @@ public class HotelReservation {
         Result result = new Result();
         result.setHotelName(cheapestHotel.get().getHotelName());
         result.setTotalCost(cheapestHotel.get().getTotalCost());
-        System.out.println(result.getHotelName() + result.getTotalCost());
+        System.out.println(result.getHotelName() + " " + result.getTotalCost());
         return result;
     }
 
