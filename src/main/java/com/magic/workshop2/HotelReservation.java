@@ -31,7 +31,7 @@ public class HotelReservation  {
 
     private static Result getCheapestHotel(int daysInBetween , ArrayList<HotelInfo> hotelArray) {
         int currentHotelCost;
-        for (HotelInfo currentHotel : hotelArray) {     // set weekday cost for each hotel
+        for (HotelInfo currentHotel : hotelArray) {    
             currentHotelCost = daysInBetween * currentHotel.getWeekdayRate();
             currentHotel.setCostWeekDay(currentHotelCost);
         }
