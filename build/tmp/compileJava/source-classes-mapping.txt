@@ -1,0 +1,6 @@
+com/magic/workshop2/Main.java
+ com.magic.workshop2.Main
+com/magic/workshop2/HotelReservation.java
+ com.magic.workshop2.HotelReservation
+com/magic/workshop2/HotelInfo.java
+ com.magic.workshop2.HotelInfo

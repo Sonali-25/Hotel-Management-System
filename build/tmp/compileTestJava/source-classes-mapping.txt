@@ -1,0 +1,2 @@
+com/magic/workshop2/HotelReservationTest.java
+ com.magic.workshop2.HotelReservationTest
