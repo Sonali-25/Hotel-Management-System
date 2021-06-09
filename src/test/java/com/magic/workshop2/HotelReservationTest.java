@@ -54,9 +54,9 @@ public class HotelReservationTest {
     public void cheapestHotelForWeekdaysAndWeekend() {
         HotelReservation hotelReservation = new HotelReservation();
         ArrayList<HotelInfo> hotelArray = new ArrayList<>();
-        hotelArray.add(hotelReservation.addHotel("LakeWood" , "Normal" , 110 , 90 ));
-        hotelArray.add(hotelReservation.addHotel("BridgeWood" , "Normal" , 160 , 50 ));
-        hotelArray.add(hotelReservation.addHotel("RidgeWood" , "Normal" , 220 , 150 ));
+        hotelArray.add(hotelReservation.addHotel("LakeWood" , "Regular" , 110 , 90 ));
+        hotelArray.add(hotelReservation.addHotel("BridgeWood" , "Regular" , 160 , 50 ));
+        hotelArray.add(hotelReservation.addHotel("RidgeWood" , "Regular" , 220 , 150 ));
         Result cheapestHotel = hotelReservation.findCheapestHotel(hotelArray , "2020-09-11" , "2020-09-12");
         Assertions.assertEquals("LakeWood" , cheapestHotel.getHotelName());
     }
