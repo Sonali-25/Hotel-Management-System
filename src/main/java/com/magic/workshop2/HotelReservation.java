@@ -4,8 +4,8 @@ import java.text.SimpleDateFormat;
 
 public class HotelReservation  {
 
-    HotelInfo addHotel(String name , String type , int weekday) {
-        return new HotelInfo(name , type , weekday);
+    HotelInfo addHotel(String name , String type , int weekday,int weekend) {
+        return new HotelInfo(name , type , weekday , weekend);
     }
     private static int getDaysInBetween(String dateStarting , String dateEnding){
 
@@ -14,13 +14,13 @@ public class HotelReservation  {
         try {
             dateStart = formatter.parse(dateStarting);
         } catch (Exception e) {
-
+            //empty catch
         }
         Date dateEnd = new Date();
         try {
             dateEnd = formatter.parse(dateEnding);
         } catch (Exception e) {
-
+            //empty catch
         }
 
         long difference = dateEnd.getTime() - dateStart.getTime();
@@ -31,10 +31,11 @@ public class HotelReservation  {
 
     private static Result getCheapestHotel(int daysInBetween , ArrayList<HotelInfo> hotelArray) {
         int currentHotelCost;
-        for (HotelInfo currentHotel : hotelArray) {    
+        for (HotelInfo currentHotel : hotelArray) {     // set weekday cost for each hotel
             currentHotelCost = daysInBetween * currentHotel.getWeekdayRate();
             currentHotel.setCostWeekDay(currentHotelCost);
         }
+        // Optional<Hotel>
         Optional<HotelInfo> cheapestHotel = hotelArray.stream().min(Comparator.comparing(HotelInfo::getCostWeekday));
         Result result = new Result();
         result.setHotelName(cheapestHotel.get().getHotelName());
