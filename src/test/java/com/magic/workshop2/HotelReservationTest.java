@@ -74,7 +74,7 @@ public class HotelReservationTest {
         Assertions.assertEquals(4, newHotel.getRating());
     }
     @Test
-    public void givenDateRange_WhenAddedForHotel_ShouldReturnCheapestHotelRateOnBasisOfCostAndRating() {
+    public void cheapestAndBestRatedHotel() {
         HotelReservation hotelReservation = new HotelReservation();
         ArrayList<HotelInfo> hotelArray = new ArrayList<>();
         hotelArray.add(hotelReservation.addHotel("LakeWood" , "Regular" , 110 , 90 , 3));
@@ -83,7 +83,16 @@ public class HotelReservationTest {
         Result cheapestHotel = hotelReservation.findCheapestHotel(hotelArray , "2020-09-11" , "2020-09-12");
         Assertions.assertEquals("LakeWood" , cheapestHotel.getHotelName());
     }
-
+    @Test
+    public void bestRatedHotel() {
+        HotelReservation hotelReservation = new HotelReservation();
+        ArrayList<HotelInfo> hotelArray = new ArrayList<>();
+        hotelArray.add(hotelReservation.addHotel("LakeWood" , "Regular" , 110 , 90 , 3));
+        hotelArray.add(hotelReservation.addHotel("BridgeWood" , "Regular" , 160 , 50 , 4));
+        hotelArray.add(hotelReservation.addHotel("RidgeWood" , "Regular" , 220 , 150 , 5));
+        Result bestRatedHotel = hotelReservation.findBestRatedHotel(hotelArray, "2020-09-11" , "2020-09-12");
+        Assertions.assertEquals("RidgeWood" , bestRatedHotel.getHotelName());
+    }
 
 
 }

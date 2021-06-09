@@ -55,7 +55,18 @@ public class HotelReservation {
         }
         return result;
     }
-
+    public Result findBestRatedHotel(ArrayList<HotelInfo> hotelArray , String startingDate , String endingDate) {
+        Result result = new Result();
+        this.findCheapestHotel(hotelArray,startingDate, endingDate);
+        Optional<HotelInfo> maximumRatingHotel = hotelArray.stream().max(Comparator.comparingInt(hotel -> hotel.getRating()));
+        result.setHotelName(maximumRatingHotel.get().getHotelName());
+        result.setTotalCost(maximumRatingHotel.get().getTotalCost());
+        result.setRating(maximumRatingHotel.get().getRating());
+        return result;
+    }
 }
+
+
+
 
 

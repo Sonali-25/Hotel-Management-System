@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.magic.workshop2.HotelReservationTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-06-09T18:05:13" hostname="DESKTOP-0RG9E2N" time="0.982">
+<testsuite name="com.magic.workshop2.HotelReservationTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-06-09T18:38:58" hostname="DESKTOP-0RG9E2N" time="0.177">
   <properties/>
-  <testcase name="checkCheapestHotelForWeekend()" classname="com.magic.workshop2.HotelReservationTest" time="0.162"/>
-  <testcase name="checkCustomerType()" classname="com.magic.workshop2.HotelReservationTest" time="0.003"/>
+  <testcase name="checkCheapestHotelForWeekend()" classname="com.magic.workshop2.HotelReservationTest" time="0.076"/>
+  <testcase name="bestRatedHotel()" classname="com.magic.workshop2.HotelReservationTest" time="0.056"/>
+  <testcase name="checkCustomerType()" classname="com.magic.workshop2.HotelReservationTest" time="0.005"/>
   <testcase name="checkNameForHotel()" classname="com.magic.workshop2.HotelReservationTest" time="0.003"/>
   <testcase name="checkWeekendRate()" classname="com.magic.workshop2.HotelReservationTest" time="0.001"/>
-  <testcase name="cheapestHotelForWeekdaysAndWeekend()" classname="com.magic.workshop2.HotelReservationTest" time="0.792"/>
-  <testcase name="checkCheapestHotelRate()" classname="com.magic.workshop2.HotelReservationTest" time="0.002"/>
+  <testcase name="cheapestAndBestRatedHotel()" classname="com.magic.workshop2.HotelReservationTest" time="0.002"/>
+  <testcase name="cheapestHotelForWeekdaysAndWeekend()" classname="com.magic.workshop2.HotelReservationTest" time="0.007"/>
+  <testcase name="checkCheapestHotelRate()" classname="com.magic.workshop2.HotelReservationTest" time="0.003"/>
   <testcase name="checkWeekRate()" classname="com.magic.workshop2.HotelReservationTest" time="0.001"/>
-  <testcase name="givenDateRange_WhenAddedForHotel_ShouldReturnCheapestHotelRateOnBasisOfCostAndRating()" classname="com.magic.workshop2.HotelReservationTest" time="0.002"/>
   <testcase name="hotelRating()" classname="com.magic.workshop2.HotelReservationTest" time="0.001"/>
   <system-out><![CDATA[LakeWood 200
-LakeWood 310
 LakeWood 200
+LakeWood 200
+LakeWood 310
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
