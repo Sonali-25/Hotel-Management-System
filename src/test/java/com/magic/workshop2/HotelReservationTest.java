@@ -32,14 +32,14 @@ public class HotelReservationTest {
         Assertions.assertEquals(newHotel.getWeekendRate(), 90);
     }
     @Test
-    public void checkCheapestHotelForWeekdays(){
+    public void checkCheapestHotelRate(){
         HotelReservation hotelReservation  = new HotelReservation();
         ArrayList <HotelInfo> HotelArray  = new ArrayList<>();
         HotelArray.add(hotelReservation.addHotel("LakeWood","Regular",110,90));
         HotelArray.add(hotelReservation.addHotel("RidgeWood","Regular",220,150));
         HotelArray.add(hotelReservation.addHotel("BridgeWood","Regular",150,50));
-        Result cheapestHotel = hotelReservation.findCheapestHotel(HotelArray,"10092020","12092020");
-        Assertions.assertEquals(220,cheapestHotel.getTotalCost());
+        Result cheapestHotel = hotelReservation.findCheapestHotel(HotelArray,"2020-09-10","2020-09-12");
+        Assertions.assertEquals(310,cheapestHotel.getTotalCost());
     }
     @Test
     public void checkCheapestHotelForWeekend(){
@@ -48,7 +48,16 @@ public class HotelReservationTest {
         HotelInfo secondHotel = hotelReservation.addHotel("RidgeWood","Regular",160,50);
         HotelInfo thirdHotel = hotelReservation.addHotel("BridgeWood","Regular",220,150);
         Assertions.assertEquals(50,secondHotel.getWeekendRate());
+    }
 
-
+    @Test
+    public void cheapestHotelForWeekdaysAndWeekend() {
+        HotelReservation hotelReservation = new HotelReservation();
+        ArrayList<HotelInfo> hotelArray = new ArrayList<>();
+        hotelArray.add(hotelReservation.addHotel("LakeWood" , "Normal" , 110 , 90 ));
+        hotelArray.add(hotelReservation.addHotel("BridgeWood" , "Normal" , 160 , 50 ));
+        hotelArray.add(hotelReservation.addHotel("RidgeWood" , "Normal" , 220 , 150 ));
+        Result cheapestHotel = hotelReservation.findCheapestHotel(hotelArray , "2020-09-11" , "2020-09-12");
+        Assertions.assertEquals("LakeWood" , cheapestHotel.getHotelName());
     }
 }

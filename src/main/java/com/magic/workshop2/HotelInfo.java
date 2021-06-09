@@ -1,17 +1,18 @@
 package com.magic.workshop2;
 
-public class HotelInfo{
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.Optional;
+import java.util.stream.Stream;
+
+public class HotelInfo {
     private String hotelName;
     private String typeOfCustomer;
-    private int weekdayRate;
-    public int costWeekday;
-    private int weekendRate;
+    private Integer weekdayRate;
+    private Integer weekendRate;
+    public Integer totalCost;
 
-    public HotelInfo(){
-
-    }
-
-    public HotelInfo(String hotelName, String typeOfCustomer, int weekdayRate,int weekendRate) {
+    public HotelInfo(String hotelName, String typeOfCustomer, Integer weekdayRate , Integer weekendRate) {
         this.hotelName = hotelName;
         this.typeOfCustomer = typeOfCustomer;
         this.weekdayRate = weekdayRate;
@@ -26,23 +27,23 @@ public class HotelInfo{
         return typeOfCustomer;
     }
 
-    public int getWeekdayRate() {
+    public Integer getWeekdayRate() {
         return weekdayRate;
     }
 
-    public int getCostWeekday() {
-        return  costWeekday;
-    }
-
-    public void setCostWeekDay(int costWeekday) {
-        this.costWeekday = costWeekday;
-    }
-
-    public int getWeekendRate() {
+    public Integer getWeekendRate() {
         return weekendRate;
     }
 
-    public void setWeekendRate(int weekendRate) {
-        this.weekendRate = weekendRate;
+    public Integer getTotalCost(){
+        return totalCost;
+    }
+    public void setTotalCost(Integer totalCost){
+        this.totalCost = totalCost;
+    }
+
+    public Integer getTotalRate(LocalDate dateStart , LocalDate dateEnd , long difference) {
+        Optional<Integer> totalcost = Stream.iterate(dateStart , date -> date.plusDays(difference)).limit(dateEnd.getDayOfMonth() - dateStart.getDayOfMonth() + 1 ).map(date -> { if(date.getDayOfWeek().equals(DayOfWeek.SATURDAY) || date.getDayOfWeek().equals(DayOfWeek.SUNDAY)) return this.getWeekendRate();return this.getWeekdayRate();}).reduce((total , next) -> total+next);
+        return totalcost.get();
     }
 }
