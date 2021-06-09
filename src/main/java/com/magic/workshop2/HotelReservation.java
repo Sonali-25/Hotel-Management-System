@@ -14,13 +14,13 @@ public class HotelReservation  {
         try {
             dateStart = formatter.parse(dateStarting);
         } catch (Exception e) {
-            //empty catch
+
         }
         Date dateEnd = new Date();
         try {
             dateEnd = formatter.parse(dateEnding);
         } catch (Exception e) {
-            //empty catch
+
         }
 
         long difference = dateEnd.getTime() - dateStart.getTime();
@@ -35,7 +35,6 @@ public class HotelReservation  {
             currentHotelCost = daysInBetween * currentHotel.getWeekdayRate();
             currentHotel.setCostWeekDay(currentHotelCost);
         }
-        // Optional<Hotel>
         Optional<HotelInfo> cheapestHotel = hotelArray.stream().min(Comparator.comparing(HotelInfo::getCostWeekday));
         Result result = new Result();
         result.setHotelName(cheapestHotel.get().getHotelName());
