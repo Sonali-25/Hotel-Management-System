@@ -74,7 +74,7 @@ public class HotelReservationTest {
         Assertions.assertEquals(4, newHotel.getRating());
     }
     @Test
-    public void givenDateRange_WhenAddedForHotel_ShouldReturnCheapestHotelRateOnBasisOfCostAndRating() {
+    public void cheapestAndBestRatedHotel() {
         HotelReservation hotelReservation = new HotelReservation();
         ArrayList<HotelInfo> hotelArray = new ArrayList<>();
         hotelArray.add(hotelReservation.addHotel("LakeWood" , "Regular" , 110 , 90 , 3));
